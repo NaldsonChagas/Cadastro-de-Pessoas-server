@@ -1,0 +1,16 @@
+{
+  "name": "cadastro-de-pessoas-service",
+  "version": "1.0.0",
+  "description": "Serviço com um crud simples de pessoas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naldson Chagas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "nedb": "^1.8.0"
+  }
+}
