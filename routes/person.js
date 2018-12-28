@@ -30,13 +30,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-
+  db.update({ _id: req.params.id }, req.body, (err, numUpdate) => {
+    if (err) res.status.json({ err: error });
+    else res.status(200).json({ numUpdate: numUpdate });
+  });
 });
 
 router.delete('/:id', (req, res) => {
   db.remove({ _id: req.params.id }, {}, (err, numRemoved) => {
     if (err) res.status(400).json({ error: err });
-    else res.status(200).json({ message: 'ok' });
+    else res.status(200).json({ removedUsers: numRemoved });
   });
 });
 
