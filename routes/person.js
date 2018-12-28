@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  db.update({ _id: req.params.id }, null, (err, numUpdate) => {
+  db.update({ _id: req.params.id }, req.body, (err, numUpdate) => {
     if (err) error(res, 400, err);
     else res.status(200).json({ numUpdate: numUpdate });
   });
