@@ -17,6 +17,17 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
+  req.assert('_name', 'O nome é obrigatório').notEmpty();
+  req.assert('_cpf', 'O cpf é obrigatório').notEmpty();
+
+  const errors = req.validationErrors();
+
+  if (errors) {
+    error(res, 400, errors);
+    return;
+  }
+
   db.insert(req.body, (err, person) => {
     if (err) error(res, 400, err);
     else res.status(200).json({ id: person._id });
