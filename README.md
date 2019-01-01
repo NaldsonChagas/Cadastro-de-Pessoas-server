@@ -3,4 +3,4 @@
 CRUD simples usando Express e NeDB.
 Client: https://github.com/NaldsonChagas/Cadastro-de-Pessoas
 
-A simple CRUD usgin Express and NeDB.
+A simple CRUD using Express and NeDB.
